@@ -1151,7 +1151,7 @@ bool GMainWindow::ConfirmClose() {
         return true;
 
     QMessageBox::StandardButton answer =
-        QMessageBox::question(this, tr("Citra"), tr("Are you sure you want to close Citra?"),
+        QMessageBox::question(this, "Citra", tr("Are you sure you want to close Citra?"),
                               QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
     return answer != QMessageBox::No;
 }
@@ -1218,7 +1218,7 @@ bool GMainWindow::ConfirmChangeGame() {
         return true;
 
     auto answer = QMessageBox::question(
-        this, tr("Citra"),
+        this, "Citra",
         tr("Are you sure you want to stop the emulation? Any unsaved progress will be lost."),
         QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
     return answer != QMessageBox::No;
@@ -1291,7 +1291,7 @@ void GMainWindow::OnLanguageChanged(const QString& locale) {
 
 void GMainWindow::SetupUIStrings() {
     setWindowTitle(
-        tr("Citra %1| %2-%3").arg(Common::g_build_name, Common::g_scm_branch, Common::g_scm_desc));
+        QString("Citra %1| %2-%3").arg(Common::g_build_name, Common::g_scm_branch, Common::g_scm_desc));
 }
 
 void GMainWindow::SyncMenuUISettings() {
